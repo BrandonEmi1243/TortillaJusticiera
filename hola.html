@@ -1,1 +1,96 @@
-<iframe src="https://programiz.pro" title="programiz pro website" height="500" width="500" ></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Paint</title>
+  <style>
+    #canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="800" height="400"></canvas>
+  <input type="text" id="colorPicker" placeholder="Color HEX">
+  <button onclick="applyColor()">Aplicar Color</button>
+  <button onclick="activateEraser()">Borrador</button>
+  <br>
+  <label for="brushSize">Tamaño del pincel:</label>
+  <input type="range" id="brushSize" min="1" max="20" value="2">
+  <br>
+  <label for="eraserSize">Tamaño del borrador:</label>
+  <input type="range" id="eraserSize" min="1" max="20" value="2">
+  <br>
+  <button onclick="clearCanvas()">Limpiar lienzo</button>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+    let isDrawing = false;
+    let isErasing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    canvas.addEventListener('mousedown', (e) => {
+      isDrawing = true;
+      if (!isErasing) {
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+      }
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+      if (isDrawing) {
+        if (!isErasing) {
+          draw(e);
+        } else {
+          erase(e);
+        }
+      }
+    });
+
+    canvas.addEventListener('mouseup', () => {
+      isDrawing = false;
+    });
+
+    function draw(e) {
+      const x = e.offsetX;
+      const y = e.offsetY;
+
+      context.lineWidth = document.getElementById('brushSize').value;
+      context.lineCap = 'round';
+      context.strokeStyle = document.getElementById('colorPicker').value || '#000';
+
+      context.beginPath();
+      context.moveTo(lastX, lastY);
+      context.lineTo(x, y);
+      context.stroke();
+
+      [lastX, lastY] = [x, y];
+    }
+
+    function erase(e) {
+      const x = e.offsetX;
+      const y = e.offsetY;
+
+      context.clearRect(x - (document.getElementById('eraserSize').value / 2), y - (document.getElementById('eraserSize').value / 2), document.getElementById('eraserSize').value, document.getElementById('eraserSize').value);
+    }
+
+    function applyColor() {
+      const color = document.getElementById('colorPicker').value;
+      context.strokeStyle = color || '#000';
+    }
+
+    function activateEraser() {
+      isErasing = !isErasing;
+      if (isErasing) {
+        document.querySelector('button:nth-of-type(3)').innerText = 'Dibujar';
+      } else {
+        document.querySelector('button:nth-of-type(3)').innerText = 'Borrador';
+      }
+    }
+
+    function clearCanvas() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  </script>
+</body>
+</html>
