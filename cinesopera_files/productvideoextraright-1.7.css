@@ -1,0 +1,368 @@
+/** * NOTICE OF LICENSE
+ * This Licence is only valid for one installation, you can sell it to
+ * your customer and personalize it, but you can't install more than one
+ * Licences, to install more licences buy another licences first.
+ *
+ * @author    Pol Rué
+ * @copyright Smart Modules 2014
+ * @license   One time purchase Licence (You can modify or resell the product but just one time per licence)
+ * @version 2.9.5
+ * @category product
+ * Registered Trademark & Property of smart-modules.com
+ *
+ * ****************************************
+ * *            Product Videos            *
+ * *   http://www.smart-modules.com       *
+ * *               V 2.9.5                *
+ * ****************************************
+*/
+#videos *, #pv_videos, .default-hide {
+    display:none;
+}
+#videos::after, #pv_videosl::after, #tabvideos::after {
+    content:'';
+    display:block;
+    clear:both;
+}
+#videos li, #pv_videosl li, #tabvideos li {
+    width:31%;
+    position:relative;
+    float:left;
+    margin:15px 1%;
+    list-style: none;
+}
+#pv_videosl li:first-child {
+    margin:15px 1% !important;
+}
+#videos li a, #pv_videosl li a, #tabvideos li a {
+ border:1px solid #dcdcdc;
+ display:block;
+ padding-left:0;
+}
+#videos li img, #pv_videosl li img, #tabvideos li img {
+padding:4%;
+width:100%;
+height:auto;
+}
+.videoholder_wrapper {
+    position: relative;
+}
+/*.video_link {
+    display:table !important;
+}*/
+/*.video_link > div {
+    display:table-cell;
+    vertical-align:middle;
+    background:#fff;
+}*/
+/*.video_link a {
+    display:table-cell !important;
+    vertical-align:middle;
+}*/
+.video_link, .videocenter, .video_link.video-icon, .video_link .video-icon {
+    position:relative;
+}
+.video_link:after, .videocenter::after, .video_link.video-icon::after, .video_link .video-icon::after {
+    pointer-events: none
+    display:block;
+    background: url('../img/video-icon-trans.png') no-repeat scroll center center transparent;
+    position: absolute;
+    font-size: 26px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    z-index: 3;
+    vertical-align: middle;
+    top: 0;
+    left:-3px;
+}
+.video_link:hover:after, .videocenter:hover:after, .video_link.video-icon:hover:after, .video_link .video-icon:hover:after {
+    display:none;
+    /*opacity:0.6;*/
+}
+img.video-thumb {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+#product-modal .video_link {
+    display: none;
+}
+#pv_videosl li::after {
+    display: none;
+}
+.vresponsive {
+    position:relative;
+    padding-bottom: 56.25%; /* 16:9 */
+}
+#videothumb a {
+height:100%;
+}
+.videoholder {
+    padding-bottom:100%;
+    width:100%;
+}
+.videoholder iframe,
+.vresponsive iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+/** Columns **/
+.video_cols li {
+    display:inline-block;
+    margin:0 0.8%;
+}
+.video_cols img {
+    max-width:100%;
+    height:auto;
+}
+#tabvideos.video_cols_3 li, #pv_videos.video_cols_3 li , #pv_videosl.video_cols_3 li, .video_cols_3 li {
+width: 31.333%;
+}
+#tabvideos.video_cols_4 li, #pv_videos.video_cols_4 li , #pv_videosl.video_cols_4 li, .video_cols_4 li {
+max-width:23%;
+}
+#tabvideos.video_cols_5 li, #pv_videos.video_cols_5 li, #pv_videosl.video_cols_5 li, .video_cols_5 li {
+max-width:18%;
+}
+#tabvideos.video_cols_6 li, #pv_videos.video_cols_6 li, #pv_videosl.video_cols_6 li, .video_cols_6 li {
+max-width:14.66667%;
+}
+#tabvideos.video_cols_7 li, #pv_videos.video_cols_7 li, #pv_videosl.video_cols_7 li, .video_cols_7 li {
+max-width:12.28%;
+}
+#tabvideos.video_cols_8 li, #pv_videos.video_cols_8 li, #pv_videosl.video_cols_8 li, .video_cols_8 li {
+max-width:10.5%;
+}
+.bigtext {
+    text-transform:uppercase;
+    font-size: 20px;
+}
+/*.half { width:48%; margin:1%; float:left; }*/
+.pv_full { width:98%; margin:1%; text-align:center !important}
+
+/* Videos on product listings */
+
+/* Prestashop default theme header has a z-index of 5003... so this has to be bigger */
+#dark_bg {
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    display:none;
+    background:#000;
+    opacity:0.65;
+}
+.pv_video_wrapper {
+    width:600px;
+    display:none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    padding: 15px;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.55);
+    background: #EFEFEF;
+    z-index:100;
+}
+.pv_video_wrapper.active {
+    display:block;
+}
+.pv_video_hover {
+    position:relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+
+.pv_video_hover iframe {
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Icons */
+/* Common parts*/
+.product-container .left-block {
+    position:relative;
+}
+.pv_icon_wrapper {
+    position:absolute;
+    width:100%;
+    height:100%;
+    text-align:center;
+    overflow:hidden;
+}
+.pv_force_hide.pv_icon_wrapper {
+    display:none;
+}
+.pv_icon_wrapper i {
+    width:100%;
+    left:0;
+    position:absolute;
+    z-index:10;
+    top: 50%;
+    overflow:hidden;
+    margin-top: -10px;
+    font-size: 20px;
+    color:#000;
+}
+.pv_icon_wrapper i.pv_default {
+    margin-top: -20px;
+    font-size: 40px;
+    opacity:0.80;
+}
+.pv_icon_wrapper i.pv_default::before {
+    /* Soft Shadow */
+    text-shadow: 0px 0px 10px #fff;
+    /* Hard Shadow */
+    /*text-shadow:1px 1px 1px #fff;*/
+}
+.pv_icon_wrapper .pv_topleft,
+.pv_icon_wrapper .pv_topright,
+.pv_icon_wrapper .pv_bottomright,
+.pv_icon_wrapper .pv_bottomleft {
+    width:50px;
+}
+
+.pv_icon_wrapper .pv_topleft_bg,
+.pv_icon_wrapper .pv_topright_bg,
+.pv_icon_wrapper .pv_bottomright_bg,
+.pv_icon_wrapper .pv_bottomleft_bg {
+    width: 50%;
+    height: 50%;
+    background:#DEDEDE;
+    border:1px solid #BCBCBC;
+    position: absolute;
+    transform: rotate(45deg);
+    z-index: 9;
+    opacity:0.6;
+}
+
+.pv_icon_wrapper.round .pv_topleft_bg,
+.pv_icon_wrapper.round .pv_topright_bg,
+.pv_icon_wrapper.round .pv_bottomright_bg,
+.pv_icon_wrapper.round .pv_bottomleft_bg {
+    width:53%;
+    height:53%;
+    border-radius:50%;
+}
+
+.pv_icon_wrapper .pv_topleft {
+    left:0;
+    top:28px;
+}
+.pv_icon_wrapper .pv_topright {
+    left:77%;
+    top:28px;
+}
+.pv_icon_wrapper .pv_bottomright {
+    left:77%;
+    top:87%;
+}
+.pv_icon_wrapper .pv_bottomleft {
+    left:0;
+    top:87%;
+}
+
+.pv_topleft_bg {
+    top: -25%;
+    left: -25%;
+}
+.pv_topright_bg {
+    right: -25%;
+    top: -25%;
+}
+.pv_bottomright_bg {
+    right: -25%;;
+    bottom: -25%;;
+}
+.pv_bottomleft_bg {
+    left: -25%;;
+    bottom: -25%;;
+}
+
+/* Popup Video */
+
+.pv_popupvideo {
+    display:none;
+}
+.pv_force_display.pv_popupvideo {
+    display:inline-block;
+}
+.closevideo {
+    position: absolute;
+    right: -16px;
+    z-index: 101;
+    top: -16px;
+    padding: 5px 8px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid#000;
+    font-weight: bold;
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+#pv_popup_content {
+    margin-top: 15px;
+}
+#pv_title,
+#pv_price,
+#pv_actions {
+    display:inline-block;
+    font-size:16px;
+    float:left;
+    height:45px;
+    /*overflow:hidden;*/
+
+}
+#pv_title {
+    width:45%;
+    margin-left:3%
+}
+#pv_price {
+    width:15%;
+}
+#pv_actions {
+    width:37%;
+}
+#pv_title *, #pv_price * {
+    line-height:45px;
+    /*text-overflow:ellipsis;*/
+    /*white-space: nowrap;*/
+}
+#pv_price span:not(.product-price) {
+    display:none;
+}
+@media screen and (max-width:768px) {
+    .pv_popupvideo {
+        display:inline-block;
+    }
+    .pv_icon_wrapper {
+        display:none;
+    }
+}
+
+@media screen and (max-width:550px) {
+    #pv_title,
+    #pv_price,
+    #pv_actions {
+        overflow:hidden;
+    }
+    #pv_title a,
+    #pv_price span,
+    #pv_actions a {
+        font-size:12px;
+    }
+}

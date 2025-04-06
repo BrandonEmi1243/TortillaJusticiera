@@ -1,0 +1,190 @@
+/**
+ * Smart CSV Lists Front Office Feature
+ *
+ * NOTICE OF LICENSE
+ *
+ * @category Front Office Features
+ * @author    Pol Rué
+ * @copyright Smart Modules 2014
+ * @version 1.4.7
+ * @license   One time License
+ * Registered Trademark & Property of Smart-Modules.pro
+ *
+ * **************************************************
+ *                   WhatsApp contact               *
+ * *           http://www.smart-modules.pro         *
+ * *                    V 1.4.7                     *
+ * **************************************************
+ *
+*/
+
+/* General settings */
+.whatsappcontact { margin:5px 0 15px 0; }
+.whatsapplink {
+    line-height: 32px;
+    display: inline-block;
+}
+.whatsapplink span {
+    display:inline-block;
+}
+.whatsapptitle, .whatsphone {
+    /*line-height: 20px;
+    top: 6px;
+    left:40px;
+    position: relative;*/
+    font-size: 20px;
+    color:#5ED142;
+}
+.whatsapp-icon {
+    /*display:inline-block;*/
+    background:url('../img/whatsapp-icon-32.png') left center no-repeat;
+    width:32px;
+    height:32px;
+    margin-right:10px;
+    position: relative;
+    top: 8px;
+ }
+.whatsphone {
+    color:#777;
+    /*font-size: 18px;*/
+    margin-left:10px;
+}
+/*.icon-whatsapp .whatsapptitle,.icon-whatsapp .whatsphone {
+    top:0; left:8px;
+}*/
+.icon-whatsapp {
+    font-size:21px;
+    line-height:32px;
+    color:#5ED142;
+}
+/* Styles for each display customize css to set each view
+* To change each section CSS
+* Navigation .wc-nav
+* Top of Pages .wc-top
+* Page footer .wc-footer
+* Page footer .wc-footer
+* Right column display .wc-right
+* Left column display .wc-left
+* Product Right column .wc-prod-right
+* Product Left column .wc-prod-left
+* New account form .wc-ord-reg
+* New Address .wc-order-addr
+* Order main steps .wc-order-main
+* Order Authentication .wc-order-auth
+*
+* To change and edit the Whatsapp icon > .icon-whatsapp
+* Icon sizes:
+*   16x16 background-image: url('../img/whatsapp-icon-16.png');
+*   24x24 background-image: url('../img/whatsapp-icon-24.png');
+*   32x32 background-image: url('../img/whatsapp-icon-32.png');
+*   48x48 background-image: url('../img/whatsapp-icon-48.png');
+*   64x64 background-image: url('../img/whatsapp-icon-64.png');
+*
+* to change the styles of the Whatsapp word > .whatsapptitle
+* to change the styles of the Whatsapp phone number > .whatsphone
+* to change a specific display target the section class and the parameter you want to change
+* for example .wc-nav .icon-whatsapp  { ... } to change the icon CSS of the top navigation
+*/
+/* Navigation Top */
+.wc-nav {
+    float:left;
+    margin-left:15px;
+}
+.wc-nav .whatsapplink { line-height:24px; }
+.wc-nav .whatsapp-icon { background-image:url('../img/whatsapp-icon-24.png'); width:24px; height:24px; margin-right: 6px; top: 4px;}
+.wc-nav .whatsappcontact { margin:0;}
+.wc-nav .whatsapptitle { font-size:18px;}
+.wc-nav .whatsphone { font-size:14px; color:#fff; margin-left: 6px;}
+.wc-nav p {
+    margin-right:10px;
+}
+.wc-nav p, .wc-nav .whatsappcontact { display:inline-block; }
+/* Header */
+.wc-top p, .wc-top .whatsappcontact { display:inline-block; }
+.wc-top p {
+    margin-right:10px;
+}
+/* Footer */
+.wc-footer {
+    display:inline-block;
+     float:left;
+}
+
+/* Account creation */
+.wc-ord-reg {
+    padding-top: 10px;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+}
+/* Order Process*/
+.wc-order-addr p {
+     margin-top:25px;
+}
+/*.wc-footer .whatsphone { color:#fff; }*/
+
+.wc-phone-float {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background: #F5F5F5;
+    width: 100%;
+    border-top: 1px solid #b2b2b2;
+}
+.wc-phone-float .whatsappcontact {
+    margin: 5px 0 6px 0;
+}
+
+.hideme {
+    display:none;
+}
+
+.wc-supercheckout {
+    clear: both;
+    padding-top: 20px;
+}
+
+@media screen and (max-width:768px) {
+    .whatsappwrapper { text-align:center; margin-top:15px; }
+    .wc-footer { float:none; }
+    .wc-footer,
+    .wc-nav p,
+    .wc-nav .whatsappcontact,
+    .wc-top p,
+    .wc-top .whatsappcontact,
+    .wc-footer p,
+    .wc-footer .whatsappcontact { 
+        display:block;
+        text-align:center
+    }
+    .whatsapp-icon {
+        padding-right: 40px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .whatsappwrapper.wc-nav { width:100%; text-align:center; }
+    .wc-nav .whatsappcontact { display:block; text-align:center; }
+    .wc-nav .whatsapp-icon { /*width: auto;*/ }
+    .whatsappcontact * {
+        font-size:18px !important;
+    }
+}
+@media screen and (max-width:540px) {
+    .whatsappcontact * {
+        font-size:16px !important;
+    }
+    .wc-phone-float .whatsappcontact * {
+        font-size:18px !important;
+        margin:0 4px;
+    }
+    .whatsapp-icon {
+        background-image:url('../img/whatsapp-icon-24.png');
+        padding-right:0;
+        width:24px;
+    }
+    .whatsapptitle, .whatsphone {
+        left: 15px
+    }
+
+}
