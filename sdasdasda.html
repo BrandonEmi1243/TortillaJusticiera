@@ -9,7 +9,7 @@
     }
 
     p {
-      font-family: "Comic Sans MS";
+      font-family: "Comic Sans MS", "Roboto", "Arial", "Helvetica";
       font-size: 100px;
       color: #fff;
       text-align: center;
@@ -37,11 +37,14 @@
   <section>
     <div id="current_date">
       <script>
+        function something() {
         date = new Date();
           year = date.getFullYear();
           month = date.getMonth() + 1;
           day = date.getDate();
           document.getElementById("current_date").innerHTML =   month + "/" + day + "/" + year;
+        }
+        setInterval(something, 1000);
       </script>
     </div>
 
